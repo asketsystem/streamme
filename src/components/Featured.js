@@ -51,12 +51,12 @@ const Featured = () => {
   return (
     <FeaturedContainer>
       <Image
-        src="https://image.pexels.com/photos/4488194/pexels-photo-4488194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        src="https://images.pexels.com/photos/4488194/pexels-photo-4488194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         alt="main"
       />
       <InfoContainer>
         <img
-          src="https://www.seekpng.com/png/full/210-2102107842_the-matrix-logo-matrix-movie-logo-png.png"
+          src="https://www.seekpng.com/png/full/210-2107842_the-matrix-logo-matrix-movie-logo-png.png"
           alt="logo"
         />
         <span className="desc">
