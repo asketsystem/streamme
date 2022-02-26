@@ -5,6 +5,7 @@ import {
 } from "@material-ui/icons";
 import MovieItem from "./MovieItem";
 import styled from "styled-components";
+import { useState } from "react";
 
 const ListContainer = styled.div`
   width: 100%;
@@ -47,14 +48,17 @@ const MovieContainer = styled.div`
 `;
 
 const MoviesList = () => {
+  const [slideNumber, setSlideNumber] = useState(0);
   const listRef = useRef();
 
   const handleClick = (direction) => {
     let distance = listRef.current.getBoundingClientRect().x - 50;
-    if (direction == "left") {
+    if (direction == "left" && slideNumber > 0) {
+      setSlideNumber(slideNumber - 1);
       listRef.current.style.transform = `translateX(${230 + distance}px)`;
     }
-    if (direction === "right") {
+    if (direction === "right" && slideNumber < 5) {
+      setSlideNumber(slideNumber + 1);
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
   };
