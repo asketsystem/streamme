@@ -1,4 +1,10 @@
-import { PlayArrow, ThumbDownAltOutlined } from "@material-ui/icons";
+import {
+  Add,
+  PlayArrow,
+  ThumbDownOutlined,
+  ThumbUpAltOutlined,
+} from "@material-ui/icons";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const ItemContainer = styled.div`
@@ -9,12 +15,64 @@ const ItemContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   color: white;
+  &:hover {
+    width: 325px;
+    height: 300px;
+    position: absolute;
+    top: -150px;
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.07);
+  }
+  img {
+    height: 140px;
+  }
 `;
 
 const MainImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute
+  top: 0;
+  left: 0;
+`;
+
+const ItemInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+`;
+
+const IconsContainer = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+  .icon {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+`;
+const InfoTop = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: gray;
+  .limit {
+    border: 1px solid gray;
+    padding: 1px 3px;
+    margin: 0 10px;
+  }
+`;
+const Description = styled.div`
+  font-size: 13px;
+  margin-bottom: 10px;
+`;
+const Genre = styled.div`
+  font-size: 14px;
+  color: lightgray;
 `;
 
 const MovieItem = ({ index }) => {
@@ -39,7 +97,7 @@ const MovieItem = ({ index }) => {
               <PlayArrow className="icon" />
               <Add className="icon" />
               <ThumbUpAltOutlined className="icon" />
-              <ThumbDownAltOutlined className="icon" />
+              <ThumbDownOutlined className="icon" />
             </IconsContainer>
             <InfoTop>
               <span>2 hour 14 mins</span>
